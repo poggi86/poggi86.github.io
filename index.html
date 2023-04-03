@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+
+    <META name="viewport" content="width=devise-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+
+    <title>Kleiderspende - gib deiner Kleidung eine zweite Chance</title>
+    <meta name="description" content="Kleiderspende - gib deiner Kleidung eine zweite Chance">
+    <link rel="stylesheet" href='main-kopie.css' type="text/css">
+</head>
+
+<body>
+    <header>
+
+        <nav class="social_media">
+            <ul class="social_media_ul">
+                <li><a href="https://www.instagram.com/poggi786/?igshid=YmMyMTA2M2Y%3D" target="_blank"><img
+                            class="icon" src="bilder/Instagram_Glyph_Gradient_RGB.svg"></a></li>
+                <li><a href="https://www.facebook.com/stephanie.symanzik" target="_blank"><img class="icon"
+                            src="bilder/f_logo_RGB-Blue_58.png"></a></li>
+                <li><a href="mailto:stephanie.symanzik@iubh-fernstudium.de"><img class="icon"
+                            src="bilder/brief.png"></a></li>
+            </ul>
+        </nav>
+
+        <div class="header">
+            <img class="logo" src="bilder/Kleiderlogo.tiff" alt="logo" />
+        </div>
+
+
+        <nav class="menue">
+            <button aria-expanded="false" aria-controls="navi-liste">
+                <span class="offen">☰</span>
+                <span class="geschlossen">☰</span>
+            </button>
+            <ul class="menue_list">
+                <li><a href="#home" class="menue_elements">Home</a></li>
+                <li><a href="#spende_reg" class="menue_elements">Spende registrieren</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="home">
+            <h1>Herzlich willkommen bei Kleiderspende! Gib deiner Kleidung, mit unserer Hilfe, eine zweite Chance</h1>
+            <div class="kleidung"><img src="bilder/kleidung2.jpg"></div>
+            <div class="text">
+                Jeder von uns kennt es, der Kleiderschrank ist überfüllt mit mehr Kleidung, als wir überhaupt auftragen
+                können. <br>
+                Ein Trend jagt den nächsten und je nachdem wie modeaffin man ist, werden gute, noch tragbare Klamotten
+
+                in die hinterste Ecke des Schrankes verbannt.
+                Doch das muss nicht sein, denn es gibt auf der Welt leider viel zu viele Gegenden,
+                in denen sich Menschen keine Kleidung leisten können oder deren Leben durch Kriege
+                zerstört wurden und nun noch noch das besitzen, was sie am Körper tragen.
+                Und genau hier können Kleiderspenden helfen.
+                Jede Spende, egal wie groß oder klein hilft Frauen, Kindern und Männern in Not.
+                Deswegen arbeiten wir zusammen mit dem Deutschen Roten Kreuz und Save the Children um
+                nicht mehr benötigte Kleidung dorthin zu bringen, wo man die dringend braucht.
+
+                Bei der Kleiderspende kann ausgewählt werden, wo die Spende hin soll. <br>
+                <br>Derzeit stehen folgende Länder zur Auswahl: <br>
+
+                <ul>
+                    <li>Burundi</li>
+                    <li>Südsudan</li>
+                    <li>Somalia</li>
+                    <li>Syrien</li>
+                    <li>Mosambik</li>
+                    <li>Madagaskar</li>
+                </ul>
+
+            </div>
+
+        </section>
+
+        <!-- ###############
+                Formular
+                ############### -->
+        <section id="spende_reg">
+            <h2>Spende registrieren</h2>
+            <div class="container_formular">
+
+                <form class="formular_content">
+                    <h4>Art der Kleidung</h4>
+                    <label>
+                        <input type="checkbox" id="Herren" name="art_kleidung" value="herren"> Herren
+                    </label><br>
+                    <label>
+                        <input type="checkbox" id="damen" name="art_kleidung" value="damen"> Damen
+                    </label><br>
+                    <label>
+                        <input type="checkbox" id="kinder" name="art_kleidung" value="kinder"> Kinder
+                    </label><br>
+                    <label>
+                        <input type="checkbox" id="baby" name="art_kleidung" value="baby"> Baby
+                    </label><br>
+                    <br><select required=""
+                        oninvalid="this.setCustomValidity('Bitte wähle das gewünschte Land für die Kleiderspende aus')"
+                        oninput="setCustomValidity('')" name="krisen_region" id="krisen_region" class="krisen_land">
+                        <option value="">Wähle eine Krisenregion</option>
+                        <option value="Burundi">Burundi</option>
+                        <option value="Südsudan">Südsudan</option>
+                        <option value="Somalia">Somalia</option>
+                        <option value="Mosambik">Mosambik</option>
+                        <option value="Madagaskar">Südsudan</option>
+                        <option value="Syrien">Syrien</option>
+                    </select><br>
+                    <br><select onchange="setVisibility(this)" id="abholoption" required=""
+                        oninvalid="this.setCustomValidity('Bitte wählen Sie eine Abgabeoption aus')"
+                        oninput="setCustomValidity('')" name="abgabe_option" class="abgabe">
+                        <option value="0">Wähle eine Abgabeoption</option>
+                        <option value="stelle">Geschäftsstelle</option>
+                        <option value="hol">Abholung</option>
+                    </select>
+                    <div class="formular_content" id="id_abholung" class="toggle" style="display:none">
+                        <!-- <form class="formular_content" required=""> -->
+                        <h4>Adresse für Abholung</h4>
+                        <label for="name" class="label_input">Name: <br>
+                            <input required="" oninvalid="this.setCustomValidity('Bitte füllen Sie dieses Feld aus')"
+                                oninput="setCustomValidity('')" type="text" id="name" class="input-size">
+                        </label><br><label for="street" class="label_input">Straße und Hausnummer: <br>
+                            <input required="" oninvalid="this.setCustomValidity('Bitte füllen Sie dieses Feld aus')"
+                                oninput="setCustomValidity('')" type="text" id="street" class="input-size">
+                        </label><br>
+                        <label for="post_code" class="label_input">Postleitzahl: <br>
+                            <input required="" oninvalid="this.setCustomValidity('Bitte füllen Sie dieses Feld aus')"
+                                oninput="setCustomValidity('')" type="text" id="post_code" class="input-size">
+                        </label><br>
+
+                        <label for="city" class="label_input">Stadt: <br>
+                            <input required="" oninvalid="this.setCustomValidity('Bitte füllen Sie dieses Feld aus')"
+                                oninput="setCustomValidity('')" type="text" id="city" class="input-size"><br><br>
+                            <input type="submit" value="Spende registrieren" class="submit-btn">
+                        </label><br>
+                    </div>
+                    <div class="formular_content" id="id_geschaeftsstelle" class="toggle" style="display:none">
+                        <!-- <form class="formular_content"> -->
+                        <div class="geschaeftsstelle_adresse">
+                            <h4>Adresse Geschäftsstelle Kleiderspende</h4>
+                            <a>Kleiderspende - Gib deiner Kleidung eine zweite Chance</a><br>
+                            <a>Beethovenstr. 31</a><br>
+                            <a>78194 Immendingen</a>
+                        </div>
+                        <br><input type="submit" value="Spende registrieren" class="submit-btn">
+                        <!-- </form> -->
+                    </div>
+                </form>
+            </div>
+        </section>
+        <p class="text">Wir arbeiten mit folgenden Organisationen zusammen:</p>
+        <div class="partner">
+            <figure><img src="bilder/Save-The-Children-logo.jpg" width="194" height="124" border="0"
+                    alt="Save the children"></figure>
+            <figure><img src="bilder/rotes_kreuz.png" width="124" height="124" border="0" alt="Deutsches Rotes Kreuz">
+            </figure>
+        </div>
+    </main>
+    <footer>
+        <nav class="footer">
+            <ul class="footer_list">
+                <li><a href="#" class="footer_elements">Copyright 2023</a></li>
+                <li><a href="#" class="footer_elements">Impressum</a></li>
+                <li><a href="#" class="footer_elements">Datenschutz</a></li>
+            </ul>
+        </nav>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
