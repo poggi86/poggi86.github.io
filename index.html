@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <title>Kleiderspende - gib deiner Kleidung eine zweite Chance</title>
     <meta name="description" content="Kleiderspende - gib deiner Kleidung eine zweite Chance">
-    <link rel="stylesheet" href='main-kopie.css' type="text/css">
+    <link rel="stylesheet" href='main.css' type="text/css">
 </head>
 
 <body>
@@ -35,6 +35,7 @@
             </ul>
         </nav>
     </header>
+
     <main>
         <section id="home">
             <h1>Herzlich willkommen bei Kleiderspende! Gib deiner Kleidung, mit unserer Hilfe, eine zweite Chance</h1>
@@ -67,11 +68,13 @@
 
             </div>
         </section>
+
         <!-- #### Formular #### -->
         <section id="spende_reg">
             <h2>Spende registrieren</h2>
             <div class="container_formular">
                 <form class="formular_content">
+
                     <!-- Checkboxen zur Auswahl der Kleidung  -->
                     <h3>Art der Kleidung</h3>
                     <label>
@@ -86,6 +89,7 @@
                     <label>
                         <input type="checkbox" id="id_baby" name="art_kleidung" value="Babykleidung"> Baby
                     </label><br>
+
                     <!-- Dropdownmenue zur Auswahl des Krisenlandes -->
                     <br><select required=""
                         oninvalid="this.setCustomValidity('Bitte wähle das gewünschte Land für die Kleiderspende aus')"
@@ -98,6 +102,7 @@
                         <option value="Madagaskar">Südsudan</option>
                         <option value="Syrien">Syrien</option>
                     </select><br>
+
                     <!-- Dropdown zur Abholoption -->
                     <br><select id="abholoption" onchange="setVisibility(this)" required=""
                         oninvalid="this.setCustomValidity('Bitte wählen Sie eine Abgabeoption aus')"
@@ -106,12 +111,13 @@
                         <option value="stelle">Geschäftsstelle</option>
                         <option value="hol">Abholung</option>
                     </select>
+
                     <!-- Eingabefelder für das Formular der Abholung -->
                     <div class="formular_content" id="id_abholung" class="toggle" style="display:none">
                         <h4>Adresse für Abholung</h4>
                         <label for="date" class="label_input">Datum: <br>
                             <input required="" oninvalid="this.setCustomValidity('Bitte füllen Sie dieses Feld aus')"
-                                oninput="setCustomValidity('')" type="date" id="id_date">
+                                oninput="setCustomValidity('')" name="kalender_abholung" type="date" id="id_date">
                         </label><br><br>
                         <label for="name" class="label_input">Name: <br>
                             <input required="" oninvalid="this.setCustomValidity('Bitte füllen Sie dieses Feld aus')"
@@ -132,6 +138,7 @@
                         </label><br><br>
                     </div>
                 </form>
+
                 <!-- Formular für die Abgabe in der Geschäftsstelle -->
                 <form>
                     <div class="formular_content" id="id_geschaeftsstelle" class="toggle" style="display:none">
@@ -143,7 +150,7 @@
                         </div>
                         <label for="time_stamp" class="label_input"><br>Abgabetermin: <br>
                             <input required="" oninvalid="this.setCustomValidity('Bitte füllen Sie dieses Feld aus')"
-                                oninput="setCustomValidity('')" type="datetime-local" id="time_stamp">
+                                oninput="setCustomValidity('')" name="kalender_abholung" type="date" id="time_stamp">
                             <br><br><input type="submit" value="Spende registrieren" class="submit-btn">
                         </label><br><br>
                     </div>
@@ -158,6 +165,7 @@
             </figure>
         </div>
     </main>
+
     <footer>
         <nav class="footer">
             <ul class="footer_list">
@@ -167,6 +175,7 @@
             </ul>
         </nav>
     </footer>
+
     <script src="script.js"></script>
 </body>
 
