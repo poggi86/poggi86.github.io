@@ -2,10 +2,8 @@
 <html lang="de">
 
 <head>
-
     <META name="viewport" content="width=devise-width, initial-scale=1.0">
     <meta charset="UTF-8">
-
     <title>Kleiderspende - gib deiner Kleidung eine zweite Chance</title>
     <meta name="description" content="Kleiderspende - gib deiner Kleidung eine zweite Chance">
     <link rel="stylesheet" href='main-kopie.css' type="text/css">
@@ -13,7 +11,6 @@
 
 <body>
     <header>
-
         <nav class="social_media">
             <ul class="social_media_ul">
                 <li><a href="https://www.instagram.com/poggi786/?igshid=YmMyMTA2M2Y%3D" target="_blank"><img
@@ -24,12 +21,9 @@
                             src="bilder/brief.png"></a></li>
             </ul>
         </nav>
-
         <div class="header">
             <img class="logo" src="bilder/Kleiderlogo.tiff" alt="logo" />
         </div>
-
-
         <nav class="menue">
             <button aria-expanded="false" aria-controls="navi-liste">
                 <span class="offen">☰</span>
@@ -72,30 +66,27 @@
                 </ul>
 
             </div>
-
         </section>
-
-        <!-- ###############
-                Formular
-                ############### -->
+        <!-- #### Formular #### -->
         <section id="spende_reg">
             <h2>Spende registrieren</h2>
             <div class="container_formular">
-
                 <form class="formular_content">
-                    <h4>Art der Kleidung</h4>
+                    <!-- Checkboxen zur Auswahl der Kleidung  -->
+                    <h3>Art der Kleidung</h3>
                     <label>
-                        <input type="checkbox" id="Herren" name="art_kleidung" value="herren"> Herren
+                        <input type="checkbox" id="id_herren" name="art_kleidung" value="Herrenkleidung"> Herren
                     </label><br>
                     <label>
-                        <input type="checkbox" id="damen" name="art_kleidung" value="damen"> Damen
+                        <input type="checkbox" id="id_damen" name="art_kleidung" value="Damenkleidung"> Damen
                     </label><br>
                     <label>
-                        <input type="checkbox" id="kinder" name="art_kleidung" value="kinder"> Kinder
+                        <input type="checkbox" id="id_kinder" name="art_kleidung" value="Kinderkleidung"> Kinder
                     </label><br>
                     <label>
-                        <input type="checkbox" id="baby" name="art_kleidung" value="baby"> Baby
+                        <input type="checkbox" id="id_baby" name="art_kleidung" value="Babykleidung"> Baby
                     </label><br>
+                    <!-- Dropdownmenue zur Auswahl des Krisenlandes -->
                     <br><select required=""
                         oninvalid="this.setCustomValidity('Bitte wähle das gewünschte Land für die Kleiderspende aus')"
                         oninput="setCustomValidity('')" name="krisen_region" id="krisen_region" class="krisen_land">
@@ -107,44 +98,54 @@
                         <option value="Madagaskar">Südsudan</option>
                         <option value="Syrien">Syrien</option>
                     </select><br>
-                    <br><select onchange="setVisibility(this)" id="abholoption" required=""
+                    <!-- Dropdown zur Abholoption -->
+                    <br><select id="abholoption" onchange="setVisibility(this)" required=""
                         oninvalid="this.setCustomValidity('Bitte wählen Sie eine Abgabeoption aus')"
                         oninput="setCustomValidity('')" name="abgabe_option" class="abgabe">
-                        <option value="0">Wähle eine Abgabeoption</option>
+                        <option value="leer">Wähle eine Abgabeoption</option>
                         <option value="stelle">Geschäftsstelle</option>
                         <option value="hol">Abholung</option>
                     </select>
+                    <!-- Eingabefelder für das Formular der Abholung -->
                     <div class="formular_content" id="id_abholung" class="toggle" style="display:none">
-                        <!-- <form class="formular_content" required=""> -->
                         <h4>Adresse für Abholung</h4>
+                        <label for="date" class="label_input">Datum: <br>
+                            <input required="" oninvalid="this.setCustomValidity('Bitte füllen Sie dieses Feld aus')"
+                                oninput="setCustomValidity('')" type="date" id="id_date">
+                        </label><br><br>
                         <label for="name" class="label_input">Name: <br>
                             <input required="" oninvalid="this.setCustomValidity('Bitte füllen Sie dieses Feld aus')"
-                                oninput="setCustomValidity('')" type="text" id="name" class="input-size">
-                        </label><br><label for="street" class="label_input">Straße und Hausnummer: <br>
+                                oninput="setCustomValidity('')" type="text" id="id_name">
+                        </label><br><br>
+                        <label for="street" class="label_input">Straße und Hausnummer: <br>
                             <input required="" oninvalid="this.setCustomValidity('Bitte füllen Sie dieses Feld aus')"
-                                oninput="setCustomValidity('')" type="text" id="street" class="input-size">
-                        </label><br>
+                                oninput="setCustomValidity('')" type="text" id="street">
+                        </label><br><br>
                         <label for="post_code" class="label_input">Postleitzahl: <br>
                             <input required="" oninvalid="this.setCustomValidity('Bitte füllen Sie dieses Feld aus')"
-                                oninput="setCustomValidity('')" type="text" id="post_code" class="input-size">
-                        </label><br>
-
+                                oninput="setCustomValidity('')" type="text" id="post_code">
+                        </label><br><br>
                         <label for="city" class="label_input">Stadt: <br>
                             <input required="" oninvalid="this.setCustomValidity('Bitte füllen Sie dieses Feld aus')"
-                                oninput="setCustomValidity('')" type="text" id="city" class="input-size"><br><br>
+                                oninput="setCustomValidity('')" type="text" id="city"><br><br>
                             <input type="submit" value="Spende registrieren" class="submit-btn">
-                        </label><br>
+                        </label><br><br>
                     </div>
+                </form>
+                <!-- Formular für die Abgabe in der Geschäftsstelle -->
+                <form>
                     <div class="formular_content" id="id_geschaeftsstelle" class="toggle" style="display:none">
-                        <!-- <form class="formular_content"> -->
                         <div class="geschaeftsstelle_adresse">
-                            <h4>Adresse Geschäftsstelle Kleiderspende</h4>
-                            <a>Kleiderspende - Gib deiner Kleidung eine zweite Chance</a><br>
-                            <a>Beethovenstr. 31</a><br>
-                            <a>78194 Immendingen</a>
+                            <h4>Adresse der Geschäftsstelle:</h4>
+                            <h5>Kleiderspende - Gib deiner Kleidung eine zweite Chance</h5>
+                            <a>Beethovenstr. 32</a><br>
+                            <a>78185 Emmendingen</a>
                         </div>
-                        <br><input type="submit" value="Spende registrieren" class="submit-btn">
-                        <!-- </form> -->
+                        <label for="time_stamp" class="label_input"><br>Abgabetermin: <br>
+                            <input required="" oninvalid="this.setCustomValidity('Bitte füllen Sie dieses Feld aus')"
+                                oninput="setCustomValidity('')" type="datetime-local" id="time_stamp">
+                            <br><br><input type="submit" value="Spende registrieren" class="submit-btn">
+                        </label><br><br>
                     </div>
                 </form>
             </div>
